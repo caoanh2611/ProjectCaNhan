@@ -102,29 +102,7 @@ public abstract class Room implements IRoom {
         System.out.println("Day in  : " + df.format(checkinDate));
         System.out.println("Day out : " + df.format(checkoutDate));
     }
-    public void update(){
-         Scanner s = new Scanner(System.in);
-        System.out.print("Enter Name Room : ");
-        this.name = s.nextLine();
-        System.out.print("Enter baseCost : ");
-        this.basecost = s.nextDouble();
-        s.nextLine();
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        df.setLenient(false);
-        while (true) {
-            System.out.print("Enter day checkinDate :");
-            String Start = s.nextLine();
-            System.out.print("Enter day checkoutDate :");
-            String end = s.nextLine();
-            try {
-                this.checkinDate = df.parse(Start);
-                this.checkoutDate = df.parse(end);
-                break;
-            } catch (Exception e) {
-                System.out.println("Invalid date. Please enter again.");
-            }
-        }
-    }
+  
     public long dayStay(){
        if(checkinDate !=null && checkoutDate != null){
            long daystay = checkoutDate.getTime() - checkinDate.getTime();

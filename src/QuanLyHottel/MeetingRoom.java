@@ -39,14 +39,6 @@ public class MeetingRoom extends Room{
       System.out.print("NumberOfBeds : " +numberOfBeds);
        
     }
- @Override
-    public  void update(){
-        super.update();
-          Scanner s = new Scanner(System.in);
-         System.out.print("Enter numberOfBeds : ");
-        this.numberOfBeds =  s.nextInt();
-    }
-
     public void setNumberOfBeds(int numberOfBeds) {
         this.numberOfBeds = numberOfBeds;
     }

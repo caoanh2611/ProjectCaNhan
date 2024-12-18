@@ -100,12 +100,7 @@ public class RoomManagementUI extends JFrame {
 
         lateFeeBtn.addActionListener(e -> calculateLateFeeForRoom());
         // gắn sự kiện tính phí trễ hạn
-
-        // Thêm mới: Thêm nút updateBtn vào panel
-        buttonPanel.add(updateBtn);
-        // gắn sự kiện cho nút updateBtn
-        updateBtn.addActionListener(e -> updateRoom());
-
+        
         buttonPanel.add(exitBtn);
         // thêm nút exitBtn vào panel
 
@@ -393,7 +388,6 @@ public class RoomManagementUI extends JFrame {
 
         double lateFee = room.calculateLateFee(dueDate, lateFeePerDay);
         // tính phí trễ hạn
-
         if (lateFee > 0) {
             // nếu có phí trễ
             displayArea.setText("Late fee for room " + room.getId() + ": " + lateFee);
@@ -402,17 +396,7 @@ public class RoomManagementUI extends JFrame {
             displayArea.setText("No late fee for room " + room.getId() + " (not overdue).");
         }
     }
+   
     
-    // Thêm mới: phương thức updateRoom()
-    private void updateRoom() {
-        String id = JOptionPane.showInputDialog(this, "Enter Room ID to update:");
-        if (id == null) return;
-        
-        boolean success = roomList.updateRoomById(id);
-        // giả sử lớp RoomList có phương thức updateRoomById(id) trả về boolean
-        // true nếu update thành công, false nếu không tìm thấy phòng
-        
-        displayArea.setText(success ? "Room updated successfully!" : "Room not found.");
-    }
 
 }

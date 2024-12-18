@@ -61,16 +61,6 @@ public class RoomList {
         }
         return null;
     }
-
-    public boolean updateRoomById(String id) {
-        Room found = findRoomById(id);
-        if (found != null) {
-            System.out.println("Update information Room : ");
-            found.update();
-            return true;
-        }
-        return false;
-    }
     public boolean deleteRoomById(String id){
         Room dele = findRoomById(id);
         if(dele != null){

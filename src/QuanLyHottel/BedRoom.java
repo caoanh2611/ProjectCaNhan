@@ -40,13 +40,6 @@ public class BedRoom extends Room{
       System.out.print("Capcity : " +capcity);
        
     }
- @Override
-    public  void update(){
-        super.update();
-          Scanner s = new Scanner(System.in);
-         System.out.print("Enter capcity : ");
-        this.capcity =  s.nextInt();
-    }
 
     public int getCapcity() {
         return capcity;
